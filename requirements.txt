@@ -2,4 +2,4 @@ streamlit==1.29.0
 psycopg2-binary==2.9.9
 bcrypt==4.1.2
 python-dotenv==1.0.0
-pandas==2.1.4
+pandas==2.1.4 --only-binary=:all:
