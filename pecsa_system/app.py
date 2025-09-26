@@ -6,6 +6,7 @@ Aplicación principal con Streamlit
 import streamlit as st
 import sys
 import os
+from init_db import main as init_db_main
 
 # Agregar el directorio al path
 sys.path.append('/content/pecsa_system')
@@ -14,6 +15,12 @@ from auth import login_user, logout_user, is_admin, require_login, hash_password
 from models import CollaboratorModel, UserModel, RoleModel, UserRoleModel
 from datetime import datetime
 import pandas as pd
+
+# Inicializar la base de datos al iniciar
+try:
+    init_db_main()
+except Exception as e:
+    st.warning(f"⚠️ La inicialización de la BD falló o ya está realizada: {e}")
 
 # ============================================
 # CONFIGURACIÓN DE LA APLICACIÓN
