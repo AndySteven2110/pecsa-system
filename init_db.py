@@ -8,7 +8,7 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 
 # Obtener conexión desde variable de entorno DATABASE_URL
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL, "postgresql://pecsa_db_user:a51SwtZhXFJDvl0bP8cPxG2dojZLg0Mj@dpg-d3arve56ubrc7398pik0-a/pecsa_db")
 
 if not DATABASE_URL:
     raise RuntimeError("❌ No se encontró DATABASE_URL en las variables de entorno.")
