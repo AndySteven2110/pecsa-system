@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: pecsa-system
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run app.py"
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+    postDeployCommand: "python init_db.py"
